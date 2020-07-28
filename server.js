@@ -105,7 +105,7 @@ app.get('/random', (req, res) => {
 
             })
             console.log(resultData);
-            res.render('pages/searches/search.ejs', { resultKey: resultData })
+            res.render('pages/searches/random.ejs', { resultKey: resultData })
         })
 
 })
