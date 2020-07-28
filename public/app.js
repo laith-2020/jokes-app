@@ -1,5 +1,7 @@
 'use strict';
+console.log('clik');
 
-$('#updateButton').clicck(function() {
-    $(this).next.toggle();
+$('#updateButton').click(function() {
+    console.log('clik');
+    $(this).next().toggle();
 })

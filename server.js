@@ -25,11 +25,11 @@ const PORT = process.env.PORT || 3000;
 // })
 
 
-app.get('/', (req, res) => {
+app.get('/fav', (req, res) => {
     let SQL = ' SELECT * FROM joke;';
     client.query(SQL)
         .then(results => {
-            res.render('pages/index', { resultsKey: results.rows });
+            res.render('pages/searches/favJoke', { resultsKey: results.rows });
         })
         .catch(error => errorHandler(error));
 
@@ -42,7 +42,7 @@ app.put('/updateData/:id', (req, res) => {
     let id = req.params.id;
     let SQL = `UPDATE joke SET type=$1, setup=$2, punchline=$3 WHERE id=$4;`;
     let safaValue = [type, setup, punchline, id];
-    client.query(SQL, safeValue)
+    client.query(SQL, safaValue)
         .then(result => {
             res.redirect(`/details/${id}`);
         })
@@ -69,15 +69,15 @@ app.get('/details/:id', (req, res) => {
     let SQL = ` SELECT * FROM joke WHERE id=$1;`;
     client.query(SQL, safeValue)
         .then((result) => {
-            console.log(data);
-            res.render('pages/searches/details', { resultKet: data.rows });
+            // console.log(data);
+            res.render('pages/searches/details', { resultKet: result.rows });
 
         })
 
 })
 
 
-app.get('/search', (req, res) => {
+app.get('/', (req, res) => {
 
     let url = `https://official-joke-api.appspot.com/jokes/programming/ten`;
     superagent.get(url)
@@ -88,7 +88,7 @@ app.get('/search', (req, res) => {
 
             })
             console.log(resultData);
-            res.render('pages/searches/search.ejs', { resultKey: resultData })
+            res.render('pages/index.ejs', { resultsKey: resultData })
         })
 
 })
