@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+
+<body>
+    <h1>Jokes About Us ( Programers XD)</h1>
+
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li> <a href="">Favorate Jokes</a> </li>
+        <li> <a href="">random Jokes</a> </li>
+
+    </ul>
+
+    <main>
+        <% resultsKey.forEach(item =>{ %>
+            <p>
+                <%=item.type%>
+            </p>
+            <p>
+                <%=item.setup%>
+            </p>
+            <p>
+                <%=item.punchline%>
+            </p>
+
+
+            <% }) %>
+                <hr>
+                <!-- <% resultsKey.forEach(item =>{ %>
+                    <p>
+                        <%=item.type%>
+                    </p>
+                    <p>
+                        <%=item.setup%>
+                    </p>
+                    <p>
+                        <%=item.punchline%>
+                    </p>
+                    <a href="/showAddFav"> <button>Add To my Joke</button> </a>
+                    <hr>
+
+
+                    <% }) %> -->
+
+
+    </main>
+
+</body>
+
+</html>

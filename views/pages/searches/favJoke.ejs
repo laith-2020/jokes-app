@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <% resultsKey.forEach(item =>{ %>
+        <p>
+            <%=item.type%>
+        </p>
+        <p>
+            <%=item.setup%>
+        </p>
+        <p>
+            <%=item.punchline%>
+        </p>
+
+        <a href="/details/<%=item.id%>"><button>Show Details</button></a>
+
+        <% }) %>
+
+</body>
+
+</html>

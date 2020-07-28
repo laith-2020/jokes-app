@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <% resultKet.forEach(item =>{ %>
+        <p>
+            <%=item.type%>
+        </p>
+        <p>
+            <%=item.setup%>
+        </p>
+        <p>
+            <%=item.punchline%>
+        </p>
+
+        <button id='updateButton'>UPDATE</button>
+        <form class="updateForm" action="/updateData/<%=item.id%>?_method=put" method="post">
+
+            <input type="text" name="type" value="<%=item.type%>">
+            <br>
+            <input type="text" name="setup" value="<%=item.setup%>">
+            <br>
+            <input type="text" name="punchline" value="<%=item.punchline%>">
+            <br>
+            <button>UPDATE</button>
+
+        </form>
+
+        <form action="/delete/<%=item.id%>?_method=delete" method="post">
+            <button type="submit">DELETE</button>
+
+        </form>
+
+
+        <% }) %>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="/app.js"></script>
+</body>
+
+</html>

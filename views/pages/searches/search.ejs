@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% resultKey.forEach(item =>{ %>
+        <p>
+            <%=item.type%>
+        </p>
+        <p>
+            <%=item.setup%>
+        </p>
+        <p>
+            <%=item.punchline%>
+        </p>
+        <a href="/showAddFav"> <button>Add To my Joke</button> </a>
+        <hr>
+
+
+        <% }) %>
+
+
+</body>
+
+</html>
